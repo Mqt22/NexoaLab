@@ -8,6 +8,7 @@
     <title>NexoraLabs</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assest/favicon.svg">
 </head>
 
 <body>
@@ -16,7 +17,9 @@
         <div class="header-container">
 
             <!-- Logo -->
+
             <a href="#" class="logo">
+                <img src="assest/logo.png" alt="" class="logo-icon">
                 <span class="logo-main">Nexora</span><span class="logo-accent">Labs</span>
             </a>
 
@@ -79,8 +82,8 @@
                     </h1>
 
                     <p>
-                        NexoraLabs creates modern websites, AI-powered automation,
-                        mobile applications, and digital experiences designed to
+                        NexoraLabs creates modern websites, AI-powered automation
+                        and digital experiences designed to
                         help businesses move forward.
                     </p>
 
@@ -764,7 +767,7 @@
 
                             <div>
                                 <span>Email</span>
-                                <strong>hello@nexoralabs.com</strong>
+                                <strong>nexoralabs53@gmail.com</strong>
                             </div>
                         </div>
 
@@ -793,59 +796,39 @@
                 <!-- Right Side / Form -->
                 <div class="contact-form-wrapper">
 
-                    <form class="contact-form" action="https://formspree.io/f/xvkzapdb" method="POST">
+                    <form class="contact-form" id="contactForm">
 
                         <div class="form-row">
 
                             <div class="form-group">
                                 <label for="name">Name</label>
-
                                 <input type="text" id="name" name="name" placeholder="Your name" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email</label>
-
                                 <input type="email" id="email" name="email" placeholder="you@example.com" required>
                             </div>
 
                         </div>
 
-
                         <div class="form-group">
                             <label for="service">What do you need?</label>
 
                             <select id="service" name="service" required>
-                                <option value="" disabled selected>
-                                    Select a service
-                                </option>
-
-                                <option value="Web Development">
-                                    Web Development
-                                </option>
-
-                                <option value="AI Automation">
-                                    AI Automation
-                                </option>
-
-                                <option value="2D Game Development">
-                                    2D Game Development
-                                </option>
-
-                                <option value="Something Else">
-                                    Something Else
-                                </option>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="AI Automation">AI Automation</option>
+                                <option value="2D Game Development">2D Game Development</option>
+                                <option value="Something Else">Something Else</option>
                             </select>
                         </div>
-
 
                         <div class="form-group">
                             <label for="budget">Estimated budget</label>
 
-                            <select id="budget" name="budget">
-                                <option value="" disabled selected>
-                                    Select a budget
-                                </option>
+                            <select id="budget" name="budget" required>
+                                <option value="" disabled selected>Select a budget</option>
                                 <option value="Under PKR 15,000">Under PKR 15,000</option>
                                 <option value="PKR 15,000 - 30,000">PKR 15,000 - 30,000</option>
                                 <option value="PKR 30,000 - 50,000">PKR 30,000 - 50,000</option>
@@ -855,18 +838,12 @@
                             </select>
                         </div>
 
-
                         <div class="form-group">
                             <label for="message">Tell us about your project</label>
 
                             <textarea id="message" name="message" rows="6"
                                 placeholder="Tell us what you want to build..." required></textarea>
                         </div>
-
-
-                        <!-- Helps identify the form submission -->
-                        <input type="hidden" name="_subject" value="New Project Inquiry — NexoraLabs">
-
 
                         <button type="submit" class="contact-submit">
                             <span>Send Project Request</span>
@@ -877,15 +854,39 @@
                             </svg>
                         </button>
 
-
                         <p class="form-note">
-                            We'll review your request and get back to you.
+                            WhatsApp will open with your project details ready to send.
                         </p>
 
                     </form>
 
                 </div>
 
+                <script>
+                    const WHATSAPP_NUMBER = "923264243320";
+                    document.getElementById("contactForm").addEventListener("submit", function (event) {
+                        event.preventDefault();
+
+                        const name = document.getElementById("name").value.trim();
+                        const email = document.getElementById("email").value.trim();
+                        const service = document.getElementById("service").value;
+                        const budget = document.getElementById("budget").value || "Not specified";
+                        const message = document.getElementById("message").value.trim();
+
+                        const whatsappMessage =
+                            `New Project Inquiry — NexoraLabs\n\n` +
+                            `Name: ${name}\n` +
+                            `Email: ${email}\n` +
+                            `Service Name: ${service}\n` +
+                            `Estimated Budget: ${budget}\n` +
+                            `Project Description: ${message}`;
+
+                        const whatsappURL =
+                            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+
+                        window.open(whatsappURL, "_blank", "noopener,noreferrer");
+                    });
+                </script>
             </div>
         </section>
     </main>
@@ -898,8 +899,10 @@
 
             <!-- Left -->
             <div class="footer-brand">
+
                 <a href="#" class="footer-logo">
-                    Nexora<span>Labs</span>
+                    <img src="assest/logo.png" alt="" class="footer-logo-icon">
+                    <span class="footer-logo-main">Nexora</span><span class="footer-logo-accent">Labs</span>
                 </a>
 
                 <p>

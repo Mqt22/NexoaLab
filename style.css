@@ -2516,7 +2516,7 @@ body {
     line-height: 1.6;
 }
 
-.about-founder-eyebrow > span {
+.about-founder-eyebrow>span {
     width: 25px;
     height: 2px;
     flex-shrink: 0;
@@ -2591,12 +2591,10 @@ body {
     position: absolute;
     inset: 0;
     content: "";
-    background: linear-gradient(
-        110deg,
-        transparent 20%,
-        rgba(255, 255, 255, 0.18) 50%,
-        transparent 80%
-    );
+    background: linear-gradient(110deg,
+            transparent 20%,
+            rgba(255, 255, 255, 0.18) 50%,
+            transparent 80%);
     transform: translateX(-130%);
     transition: transform 0.55s ease;
     pointer-events: none;
@@ -2733,39 +2731,35 @@ body {
     background: #6ee7a0;
 }
 
-/* Tablet */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .about-founder-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .about-founder-content {
+        width: 100%;
+    }
+
     .about-founder-visual {
-        max-width: 390px;
-        padding: 14px 14px 24px 0;
+        width: 100%;
+        max-width: 440px;
+        justify-self: center;
+        margin: 0 auto;
     }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
+/* Smaller tablets and phones */
+@media (max-width: 600px) {
+    .about-founder-container {
+        gap: 28px;
+    }
+
     .about-founder-visual {
-        max-width: 330px;
-        padding: 10px 10px 20px 0;
-    }
-
-    .founder-image-frame,
-    .founder-image-decoration {
-        border-radius: 18px;
-    }
-
-    .founder-image-caption {
-        left: 10px;
-        bottom: 10px;
-        padding: 9px 12px;
-        font-size: 12px;
+        max-width: 100%;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .founder-image {
-        transition: none;
-    }
-}
 /* =========================
    EXTRA LARGE
 ========================= */

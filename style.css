@@ -76,18 +76,20 @@ body {
    HEADER TEXT LOGO
 ========================= */
 
+/* =========================
+   HEADER LOGO
+========================= */
+
 .logo {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 0;
+    gap: 4px;
+    /* Controls the space between icon and text */
     flex-shrink: 0;
     white-space: nowrap;
-
     padding-left: 10px;
-
     text-decoration: none;
-
     font-size: clamp(18px, 1.4vw, 23px);
     font-weight: 800;
     letter-spacing: -0.045em;
@@ -97,12 +99,10 @@ body {
 .logo-icon {
     display: block;
     flex-shrink: 0;
-
     width: clamp(27px, 2.5vw, 36px);
     height: clamp(27px, 2.5vw, 36px);
-
     object-fit: contain;
-    margin-right: clamp(6px, 0.6vw, 9px);
+    margin-right: 0;
 }
 
 .logo-main {
@@ -116,10 +116,8 @@ body {
             #2563eb,
             #6366f1,
             #7c3aed);
-
     background-size: 200% auto;
     animation: gradientFlow 4s linear infinite;
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -2271,12 +2269,10 @@ body {
 .footer-logo-icon {
     display: block;
     flex-shrink: 0;
-
     width: clamp(30px, 2.7vw, 40px);
     height: clamp(30px, 2.7vw, 40px);
-
     object-fit: contain;
-    margin-right: clamp(7px, 0.7vw, 10px);
+    margin-right: 0;
 }
 
 .footer-logo-main {
@@ -3566,6 +3562,35 @@ body {
         font-size: 13px;
     }
 
+    .logo {
+        padding-left: 0;
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        width: 26px;
+        height: 26px;
+        margin-right: 0;
+    }
+
+    .logo-main {
+        margin-left: 0;
+    }
+
+    .footer-logo {
+        font-size: 25px;
+    }
+
+    .footer-logo-icon {
+        width: 31px;
+        height: 31px;
+        margin-right: 0;
+    }
+
+    .footer-logo-main {
+        margin-left: 0;
+    }
+
 }
 
 /* =========================
@@ -3717,10 +3742,6 @@ body {
         padding: 0 14px;
     }
 
-    .logo img {
-        width: 130px;
-    }
-
     .desktop-nav,
     .header-cta {
         display: none;
@@ -3731,41 +3752,28 @@ body {
     }
 
     .mobile-menu {
+        display: block;
         position: absolute;
-
         top: calc(100% + 8px);
-
         left: 14px;
         right: 14px;
-
         padding: 10px;
-
-        background: rgba(255, 255, 255, 0.98);
-
+        background: #ffffff;
         border: 1px solid #e8e8e8;
-
         border-radius: 14px;
-
-        box-shadow:
-            0 15px 40px rgba(0, 0, 0, 0.08);
-
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         opacity: 0;
-
         visibility: hidden;
-
+        pointer-events: none;
         transform: translateY(-8px);
-
-        transition:
-            opacity 0.25s ease,
-            transform 0.25s ease,
-            visibility 0.25s ease;
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        z-index: 1001;
     }
 
     .mobile-menu.open {
         opacity: 1;
-
         visibility: visible;
-
+        pointer-events: auto;
         transform: translateY(0);
     }
 
@@ -3925,10 +3933,6 @@ body {
 ========================= */
 
 @media (max-width: 400px) {
-
-    .logo img {
-        width: 115px;
-    }
 
     .header-container {
         padding: 0 10px;

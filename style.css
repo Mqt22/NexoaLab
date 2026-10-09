@@ -73,23 +73,36 @@ body {
 
 
 /* =========================
-   TEXT LOGO
+   HEADER TEXT LOGO
 ========================= */
 
 .logo {
     display: inline-flex;
     align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
 
     padding-left: 10px;
 
     text-decoration: none;
 
-    font-size: 21px;
+    font-size: clamp(18px, 1.4vw, 23px);
     font-weight: 800;
-
     letter-spacing: -0.045em;
-
     line-height: 1;
+}
+
+.logo-icon {
+    display: block;
+    flex-shrink: 0;
+
+    width: clamp(27px, 2.5vw, 36px);
+    height: clamp(27px, 2.5vw, 36px);
+
+    object-fit: contain;
+    margin-right: clamp(6px, 0.6vw, 9px);
 }
 
 .logo-main {
@@ -97,7 +110,19 @@ body {
 }
 
 .logo-accent {
-    color: #6476EC;
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #6366f1,
+            #2563eb,
+            #6366f1,
+            #7c3aed);
+
+    background-size: 200% auto;
+    animation: gradientFlow 4s linear infinite;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 
@@ -762,11 +787,9 @@ body {
     height: 2px;
     display: block;
 
-    background: linear-gradient(
-        90deg,
-        #7c3aed,
-        #2563eb
-    );
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #2563eb);
 
     border-radius: 10px;
 }
@@ -786,12 +809,10 @@ body {
 .about-content h2 span {
     display: block;
 
-    background: linear-gradient(
-        90deg,
-        #7c3aed 0%,
-        #6366f1 45%,
-        #2563eb 100%
-    );
+    background: linear-gradient(90deg,
+            #7c3aed 0%,
+            #6366f1 45%,
+            #2563eb 100%);
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -875,16 +896,12 @@ body {
     border-radius: 28px;
 
     background:
-        radial-gradient(
-            circle at 25% 25%,
+        radial-gradient(circle at 25% 25%,
             rgba(124, 58, 237, 0.12),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 80% 75%,
+            transparent 35%),
+        radial-gradient(circle at 80% 75%,
             rgba(37, 99, 235, 0.13),
-            transparent 40%
-        ),
+            transparent 40%),
         #f8f7ff;
 
     border: 1px solid #ece9f8;
@@ -904,23 +921,17 @@ body {
     inset: 0;
 
     background-image:
-        linear-gradient(
+        linear-gradient(rgba(124, 58, 237, 0.055) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
             rgba(124, 58, 237, 0.055) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(124, 58, 237, 0.055) 1px,
-            transparent 1px
-        );
+            transparent 1px);
 
     background-size: 42px 42px;
 
-    mask-image: linear-gradient(
-        to bottom,
-        black 0%,
-        transparent 90%
-    );
+    mask-image: linear-gradient(to bottom,
+            black 0%,
+            transparent 90%);
 
     z-index: -1;
 }
@@ -941,11 +952,9 @@ body {
 
     transform: translate(-50%, -50%);
 
-    background: linear-gradient(
-        135deg,
-        rgba(124, 58, 237, 0.30),
-        rgba(37, 99, 235, 0.25)
-    );
+    background: linear-gradient(135deg,
+            rgba(124, 58, 237, 0.30),
+            rgba(37, 99, 235, 0.25));
 
     filter: blur(70px);
 
@@ -1001,17 +1010,14 @@ body {
     left: 50%;
 
     transform:
-        translate(-50%, -50%)
-        rotate(35deg);
+        translate(-50%, -50%) rotate(35deg);
 
     border-radius: 42px;
 
-    background: linear-gradient(
-        135deg,
-        #7c3aed 0%,
-        #6366f1 48%,
-        #2563eb 100%
-    );
+    background: linear-gradient(135deg,
+            #7c3aed 0%,
+            #6366f1 48%,
+            #2563eb 100%);
 
     box-shadow:
         0 30px 70px rgba(99, 102, 241, 0.25),
@@ -1030,11 +1036,9 @@ body {
     border-radius: 34px;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             rgba(255, 255, 255, 0.22),
-            rgba(255, 255, 255, 0.03)
-        );
+            rgba(255, 255, 255, 0.03));
 
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
@@ -1060,19 +1064,16 @@ body {
 }
 
 @keyframes floatingShape {
+
     0%,
     100% {
         transform:
-            translate(-50%, -50%)
-            rotate(35deg)
-            translateY(0);
+            translate(-50%, -50%) rotate(35deg) translateY(0);
     }
 
     50% {
         transform:
-            translate(-50%, -50%)
-            rotate(40deg)
-            translateY(-12px);
+            translate(-50%, -50%) rotate(40deg) translateY(-12px);
     }
 }
 
@@ -1294,11 +1295,9 @@ body {
 
     border-radius: 10px;
 
-    background: linear-gradient(
-        90deg,
-        #7c3aed,
-        #2563eb
-    );
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #2563eb);
 }
 
 .services-header h2 {
@@ -1316,12 +1315,10 @@ body {
 .services-header h2 span {
     display: block;
 
-    background: linear-gradient(
-        90deg,
-        #7c3aed,
-        #6366f1,
-        #2563eb
-    );
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #6366f1,
+            #2563eb);
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -1396,11 +1393,9 @@ body {
     width: 0;
     height: 2px;
 
-    background: linear-gradient(
-        90deg,
-        #7c3aed,
-        #2563eb
-    );
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #2563eb);
 
     transition: width 0.3s ease;
 }
@@ -1508,7 +1503,7 @@ body {
     color: #6366f1;
 }
 
-.service-panel-header > p {
+.service-panel-header>p {
     max-width: 440px;
 
     margin: 0;
@@ -1608,11 +1603,9 @@ body {
 
     border-radius: 14px;
 
-    background: linear-gradient(
-        135deg,
-        #f0e9ff,
-        #e8f0ff
-    );
+    background: linear-gradient(135deg,
+            #f0e9ff,
+            #e8f0ff);
 
     color: #7c3aed;
 
@@ -1637,11 +1630,9 @@ body {
 .service-card:hover .service-icon {
     transform: rotate(-5deg) scale(1.05);
 
-    background: linear-gradient(
-        135deg,
-        #7c3aed,
-        #2563eb
-    );
+    background: linear-gradient(135deg,
+            #7c3aed,
+            #2563eb);
 
     color: #ffffff;
 }
@@ -1797,8 +1788,7 @@ body {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 0.85fr)
-        minmax(500px, 1fr);
+        minmax(0, 0.85fr) minmax(500px, 1fr);
 
     gap: 100px;
 
@@ -1840,11 +1830,9 @@ body {
 
     border-radius: 10px;
 
-    background: linear-gradient(
-        90deg,
-        #7c3aed,
-        #2563eb
-    );
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #2563eb);
 }
 
 
@@ -1865,12 +1853,10 @@ body {
 .contact-intro h2 span {
     display: block;
 
-    background: linear-gradient(
-        90deg,
-        #7c3aed 0%,
-        #6366f1 45%,
-        #2563eb 100%
-    );
+    background: linear-gradient(90deg,
+            #7c3aed 0%,
+            #6366f1 45%,
+            #2563eb 100%);
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -1880,7 +1866,7 @@ body {
 }
 
 
-.contact-intro > p {
+.contact-intro>p {
     max-width: 540px;
 
     margin: 28px 0 0;
@@ -1928,11 +1914,9 @@ body {
 
     border-radius: 12px;
 
-    background: linear-gradient(
-        135deg,
-        #f0e9ff,
-        #e8f0ff
-    );
+    background: linear-gradient(135deg,
+            #f0e9ff,
+            #e8f0ff);
 
     color: #7c3aed;
 }
@@ -2087,16 +2071,12 @@ body {
     appearance: none;
 
     background-image:
-        linear-gradient(
-            45deg,
+        linear-gradient(45deg,
             transparent 50%,
-            #7c3aed 50%
-        ),
-        linear-gradient(
-            135deg,
+            #7c3aed 50%),
+        linear-gradient(135deg,
             #7c3aed 50%,
-            transparent 50%
-        );
+            transparent 50%);
 
     background-position:
         calc(100% - 18px) 21px,
@@ -2144,12 +2124,10 @@ body {
 
     border-radius: 10px;
 
-    background: linear-gradient(
-        90deg,
-        #7c3aed,
-        #6366f1,
-        #2563eb
-    );
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #6366f1,
+            #2563eb);
 
     color: #ffffff;
 
@@ -2271,42 +2249,70 @@ body {
 
 
 /* =========================
-   BRAND
+   FOOTER TEXT LOGO
 ========================= */
 
 .footer-logo {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    white-space: nowrap;
 
-    font-size: 30px;
+    font-size: clamp(24px, 2vw, 30px);
     font-weight: 800;
     letter-spacing: -1.2px;
+    line-height: 1;
 
     color: #ffffff;
     text-decoration: none;
 }
 
-.footer-logo span {
-    background: linear-gradient(
-        90deg,
-        #7c3aed,
-        #6366f1,
-        #2563eb
-    );
+.footer-logo-icon {
+    display: block;
+    flex-shrink: 0;
+
+    width: clamp(30px, 2.7vw, 40px);
+    height: clamp(30px, 2.7vw, 40px);
+
+    object-fit: contain;
+    margin-right: clamp(7px, 0.7vw, 10px);
+}
+
+.footer-logo-main {
+    color: #ffffff;
+}
+
+.footer-logo-accent {
+    background: linear-gradient(90deg,
+            #7c3aed,
+            #6366f1,
+            #2563eb,
+            #6366f1,
+            #7c3aed);
+
+    background-size: 200% auto;
+    animation: gradientFlow 4s linear infinite;
 
     -webkit-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.footer-brand > p {
-    margin-top: 15px;
+/* =========================
+   SHARED GRADIENT ANIMATION
+========================= */
 
-    max-width: 360px;
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% center;
+    }
 
-    color: #9ca3af;
-    font-size: 15px;
-    line-height: 1.7;
+    100% {
+        background-position: 200% center;
+    }
 }
+
 
 
 /* =========================
@@ -2329,7 +2335,7 @@ body {
     font-weight: 500;
 
     transition: color 0.25s ease,
-                transform 0.25s ease;
+        transform 0.25s ease;
 }
 
 .footer-links a:hover {
@@ -2354,7 +2360,7 @@ body {
     letter-spacing: -0.5px;
 }
 
-.footer-form-area > p {
+.footer-form-area>p {
     margin: 10px 0 22px;
 
     color: #9ca3af;
@@ -2410,12 +2416,10 @@ body {
     border: none;
     border-radius: 8px;
 
-    background: linear-gradient(
-        135deg,
-        #7c3aed,
-        #6366f1,
-        #2563eb
-    );
+    background: linear-gradient(135deg,
+            #7c3aed,
+            #6366f1,
+            #2563eb);
 
     color: #ffffff;
 
@@ -2583,11 +2587,11 @@ body {
         gap: 16px;
     }
 
-    .footer-brand > p {
+    .footer-brand>p {
         font-size: 14px;
     }
 
-    .footer-form-area > p {
+    .footer-form-area>p {
         font-size: 13px;
     }
 }
@@ -2629,8 +2633,7 @@ body {
 
     .contact-container {
         grid-template-columns:
-            minmax(0, 0.8fr)
-            minmax(440px, 1fr);
+            minmax(0, 0.8fr) minmax(440px, 1fr);
 
         gap: 60px;
     }
@@ -2666,7 +2669,7 @@ body {
         font-size: clamp(46px, 7vw, 64px);
     }
 
-    .contact-intro > p {
+    .contact-intro>p {
         max-width: 650px;
     }
 
@@ -2705,7 +2708,7 @@ body {
         font-size: clamp(42px, 11vw, 56px);
     }
 
-    .contact-intro > p {
+    .contact-intro>p {
         margin-top: 22px;
 
         font-size: 15px;
@@ -2767,7 +2770,7 @@ body {
         font-size: 40px;
     }
 
-    .contact-intro > p {
+    .contact-intro>p {
         font-size: 14px;
 
         line-height: 1.7;
@@ -2879,7 +2882,7 @@ body {
         align-items: start;
     }
 
-    .service-panel-header > p {
+    .service-panel-header>p {
         max-width: 600px;
     }
 
@@ -3712,4 +3715,31 @@ body {
 
 .menu-toggle.active span:last-child {
     transform: translateY(-3.75px) rotate(-45deg);
+}
+
+/* =========================
+   RESPONSIVE LOGO ADJUSTMENTS
+========================= */
+
+@media (max-width: 480px) {
+    .logo {
+        padding-left: 0;
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        width: 26px;
+        height: 26px;
+        margin-right: 5px;
+    }
+
+    .footer-logo {
+        font-size: 25px;
+    }
+
+    .footer-logo-icon {
+        width: 31px;
+        height: 31px;
+        margin-right: 7px;
+    }
 }
